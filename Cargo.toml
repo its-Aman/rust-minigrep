@@ -1,8 +1,16 @@
 [package]
-name = "minigrep"
+name = "minigrep_by_aman"
 version = "0.1.0"
-authors = ["amankr"]
+authors = ["amankr <https://github.com/its-Aman>"]
 edition = "2018"
+license = "MIT OR Apache-2.0"
+description = "My own version of minigrep :)"
+
+[profile.dev]
+opt-level = 0
+
+[profile.release]
+opt-level = 3
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 

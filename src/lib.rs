@@ -1,6 +1,7 @@
-use std::env;
-use std::error::Error;
-use std::fs;
+//! # _MINIGRERP_
+//! this crate will search text in the file
+
+use std::{env, error::Error, fs};
 
 pub struct Config {
     pub query: String,
@@ -9,6 +10,18 @@ pub struct Config {
 }
 
 impl Config {
+    /// Creates the structure to hold the information of query to make
+    ///
+    /// # Example
+    ///
+    /// ```
+    ///     let config = minigrep::Config::new(env::args()).unwrap_or_else(|err| {
+    ///         eprintln!("Problem parsing arguments: {}", err);
+    ///         process::exit(1);
+    ///         });
+    ///
+    ///```
+
     pub fn new(mut args: env::Args) -> Result<Config, &'static str> {
         args.next();
 
